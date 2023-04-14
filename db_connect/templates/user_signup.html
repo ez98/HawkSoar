@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Event</title>
+</head>
+<body>
+    <h2>User Sign Up</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <label for="cwid">CWID: </label>
+      <input id="cwid" type="text" name="cwid" required><br><br>
+      <label for="user_type">User Type:</label>
+      <select name="user_type" id="user_type">
+          <option value="student">Student</option>
+          <option value="tutor">Tutor</option>
+          <option value="mentor">Mentor</option>
+      </select>
+      {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>

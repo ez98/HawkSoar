@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student Form</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="event">Select an event:</label>
+        <select name="event">
+          {% for event in events %}
+            <option value="{{ event.pk }}">{{ event.event_name }}</option>
+          {% endfor %}
+        </select>
+        <br>
+        <label for="id">Enter your ID:</label>
+        <input type="text" name="id">
+        <br>
+        <input type="submit" value="Submit">
+      </form>   
+</body>
+</html>
